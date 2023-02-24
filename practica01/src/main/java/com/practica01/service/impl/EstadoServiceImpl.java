@@ -1,13 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.practica01.service.impl;
+
+import com.practica01.dao.EstadoDao;
+import com.practica01.domain.Estado;
+import com.practica01.service.EstadoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Derek
  */
-public class EstadoServiceImpl {
+@Service
+public class EstadoServiceImpl implements EstadoService{
+    
+    @Autowired
+    private EstadoDao estadoDao;
+    
+    @Override
+    public List<Estado> getEstado() {
+        return (List<Estado>) estadoDao;
+    }
+
+    @Override
+    public Estado getEstado(Estado estado) {
+        return estadoDao.findById(estado.getIdPais()).orElse(null);
+    }
+
+    @Override
+    public void deleteEstado(Estado estado) {
+        estadoDao.delete(estado);
+    }
+
+    @Override
+    public void saveEstado(Estado estado) {
+        estadoDao.save(estado);
+    }
     
 }
