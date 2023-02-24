@@ -12,24 +12,25 @@ import lombok.Data;
 @Entity
 @Table(name = "estado")
 public class Estado implements Serializable {
-    private static final long serialVersionUID = 1L;
     
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPais;
     
-    private String nombrePais;
-    private String capital;
+    private String nombrepais;
+    private String capitalpais;
     private int poblacion;
-    private int cantidadProvincias;
+    private int cantidadprovincias;
 
     public Estado() {
     }
 
-    public Estado(String nombrePais, String capital, int poblacion, int cantidadProvincias) {
-        this.nombrePais = nombrePais;
-        this.capital = capital;
+    public Estado(Long idPais, String nombrepais, String capitalpais, int poblacion, int cantidadprovincias) {
+        this.idPais=idPais;
+        this.nombrepais = nombrepais;
+        this.capitalpais = capitalpais;
         this.poblacion = poblacion;
-        this.cantidadProvincias = cantidadProvincias;
+        this.cantidadprovincias = cantidadprovincias;
     }
 }

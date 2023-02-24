@@ -19,12 +19,12 @@ public class EstadoController {
     private EstadoService estadoService;
     
     //Mapeo
-    @GetMapping("/estados")
+    
+    @GetMapping("/")
     public String inicio(Model model){
         var estado = estadoService.getEstado();
-  
         model.addAttribute("estado", estado);
-        return "estados";
+        return "index";
     }
     
     @GetMapping("/estado/eliminar/{idPais}")
