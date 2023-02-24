@@ -12,14 +12,17 @@ CREATE TABLE practica.pais (
   id_pais INT NOT NULL AUTO_INCREMENT,
   nombre_pais VARCHAR(20) NOT NULL,
   capital_pais VARCHAR(30) NOT NULL,
-  moneda VARCHAR(25) NULL,
-  idioma_oficial VARCHAR(15) NULL,
-  PRIMARY KEY (`id_pais`))
+  poblacion int not null,
+  cantidad_provincias int not NULL,
+  PRIMARY KEY (`id_pais`)
+  )
+  
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_eo_0900_ai_ci;
 
-INSERT INTO practica.pais (id_pais, nombre_pais, capital_pais, moneda, idioma_oficial) VALUES 
-(1,'Costa Rica', 'San José', 'Colones', 'Español'),
-(2,'Estados Unidos', 'Washington D. C.', 'Dolar', 'Inglés'),
-(3,'España', 'Madrid', 'Euro', 'Español');
+INSERT INTO practica.pais ( nombre_pais, capital_pais, poblacion, cantidad_provincias) VALUES 
+('Costa Rica', 'San José', 1000000, 7),
+('Estados Unidos', 'Washington D. C.', 32322123, 50),
+('España', 'Madrid', 1234123, 10);
+
