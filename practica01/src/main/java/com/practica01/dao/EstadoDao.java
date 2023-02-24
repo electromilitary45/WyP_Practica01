@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Derek
  */
-public interface EstadoDao extends JpaRepository<Estado, Long>{
+public interface EstadoDao extends JpaRepository<Estado,Long>{
     
 }

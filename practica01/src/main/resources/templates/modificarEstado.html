@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -8,6 +8,11 @@
         <link rel="stylesheet" href="../static/css/estilo1.css">
     </head>
     <body>
-        <div>TODO write content</div>
+        <a th:href="@{/}">REGRESAR</a>
+        
+        <form th:action="@{/estado/modificar" method="POST" th:object="${estado}">
+            
+            <input type="text" name="nombre" th:field="*{nombre}">
+        </form>
     </body>
 </html>

@@ -4,33 +4,30 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
-/**
- *
- * @author Derek
- */
 @Data
 @Entity
-@Table(name = "estado")
+@Table(name="estado")
 public class Estado implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPais;
-    
-    private String nombrepais;
-    private String capitalpais;
+
+    private String nombre;
+    private String capital;
     private int poblacion;
-    private int cantidadprovincias;
+    private int provincias;
 
     public Estado() {
     }
 
-    public Estado(Long idPais, String nombrepais, String capitalpais, int poblacion, int cantidadprovincias) {
-        this.idPais=idPais;
-        this.nombrepais = nombrepais;
-        this.capitalpais = capitalpais;
+    public Estado(Long idPais, String nombre, String capital, int poblacion, int provincias) {
+        this.idPais = idPais;
+        this.nombre = nombre;
+        this.capital = capital;
         this.poblacion = poblacion;
-        this.cantidadprovincias = cantidadprovincias;
+        this.provincias = provincias;
     }
+
 }

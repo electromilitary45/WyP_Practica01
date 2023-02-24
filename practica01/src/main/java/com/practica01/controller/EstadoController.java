@@ -14,41 +14,40 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class EstadoController {
-    
+
     @Autowired
     private EstadoService estadoService;
-    
+
     //Mapeo
-    
     @GetMapping("/")
-    public String inicio(Model model){
-        var estado = estadoService.getEstado();
-        model.addAttribute("estado", estado);
+    public String inicio(Model model) {
+        var estados = estadoService.getEstado();
+        model.addAttribute("estado", estados);
         return "index";
     }
-    
+
     @GetMapping("/estado/eliminar/{idPais}")
-    public String eliminarEstado(Estado estado){
+    public String eliminarEstado(Estado estado) {
         estadoService.deleteEstado(estado);
         return "redirect:/";
     }
-    
+
     @GetMapping("/estado/nuevo")
-    public String nuevoEstado(Estado estado){
+    public String nuevoEstado(Estado estado) {
         return "crearEstado";
     }
-    
+
     @PostMapping("/estado/guardar")
-    public String guardarEstado(Estado estado){
+    public String guardarEstado(Estado estado) {
         estadoService.saveEstado(estado);
         return "redirect:/";
     }
-    
+
     @GetMapping("/estado/modificar/{idPais}")
-    public String modificaEstado(Estado estado, Model model){
+    public String modificaEstado(Estado estado, Model model) {
         estado = estadoService.getEstado(estado);
         model.addAttribute("estado", estado);
         return "modificarEstado";
     }
-    
+
 }

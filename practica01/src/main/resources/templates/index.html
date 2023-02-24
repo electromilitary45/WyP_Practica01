@@ -2,9 +2,9 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Estados Index</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="../static/css/estilo1.css">
     </head>
 
@@ -13,8 +13,7 @@
         <div class="header">
             <a href="#default" class="logo">CRUD ESTADOS</a>
             <div class="header-right">
-                <a class="active" href="#home">Index</a>
-                <a href="../templates/estados.html">Estados</a>
+                <a class="active" href="">Index</a>
 
             </div>
         </div>
@@ -31,23 +30,25 @@
                         <th>Capital del Pais</th>
                         <th>Poblacion del Pais</th>
                         <th>Cantidad de Provincias</th>
-                        <th></th>
-                        <th></th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="estado : @{estado}"`>
-                        <td>[[${estado.nombrepais}]]</td>
-                        <td>[[${estado.capitalpais}]]</td>
-                        <td>[[${estado.poblacion}]]</td>
-                        <td>[[${estado.cantidadprovincias]]</td>
-                        <td><a th:href="@{/estado/eliminar/}+${estado.idPais}">Eliminar</a></td>
-                        <td><a th:href="@{/estado/modificar/}+${estado.idPais}">Editar</a></td>
-
+                    <tr th:each="estado : ${estado}">
+                        <td>[[${estado.idPais}]]</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
 
+        </div>
+        
+        <div th:if="${estado==null or estado.empty}">
+            
+            <h3>ALO</h3>
         </div>
 
 
