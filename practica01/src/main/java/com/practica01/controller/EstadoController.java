@@ -34,7 +34,7 @@ public class EstadoController {
 
     @GetMapping("/estado/nuevo")
     public String nuevoEstado(Estado estado) {
-        return "crearEstado";
+        return "agregarEstado";
     }
 
     @PostMapping("/estado/guardar")

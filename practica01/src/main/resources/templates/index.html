@@ -4,7 +4,6 @@
     <head>
         <title>Estados Index</title>
         <meta charset="UTF-8">
-        
         <link rel="stylesheet" href="../static/css/estilo1.css">
     </head>
 
@@ -14,6 +13,7 @@
             <a href="#default" class="logo">CRUD ESTADOS</a>
             <div class="header-right">
                 <a class="active" href="">Index</a>
+                <a th:href="@{/estado/nuevo}">Agregar</a>
 
             </div>
         </div>
@@ -40,6 +40,8 @@
                         <td>[[${estado.capital}]]</td>
                         <td>[[${estado.poblacion}]]</td>
                         <td>[[${estado.provincias}]]</td>
+                        <td><a th:href="@{/estado/modificar/}+${estado.idPais}">Modificar</a></td>
+                        
                     </tr>
                 </tbody>
             </table>
