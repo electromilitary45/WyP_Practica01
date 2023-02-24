@@ -19,7 +19,7 @@ public class EstadoController {
     private EstadoService estadoService;
     
     //Mapeo
-    @GetMapping("/")
+    @GetMapping("/estados")
     public String inicio(Model model){
         var estado = estadoService.getEstado();
   
